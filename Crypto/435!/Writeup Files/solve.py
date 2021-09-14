@@ -8,17 +8,21 @@ import string
 key = b'*XhN2*8d%8Slp3*v'
 key_len = len(key)
 
+
 def pad(message):
     p = bytes((key_len - len(message) % key_len) * chr(key_len - len(message) % key_len),encoding='utf-8')
     return message + p
 
+	
 def encrypt(message,passphrase,iv):
     aes = AES.new(passphrase, AES.MODE_CBC, iv)
     return aes.encrypt(message)
 
+	
 def decrypt(message, passphrase, iv):
     aes = AES.new(passphrase, AES.MODE_CBC, iv)
     return aes.decrypt(message)
+
 	
 def find_key():
     key = '{}XhN2{}8d%8Slp3{}v'
@@ -29,6 +33,7 @@ def find_key():
                 if temp[-5:] == b'\n\n\n\n\n':
                     return key.format(c1, c2, c3).encode('utf8')
 
+					
 def find_block(encrypted_block, message_block):
     c1 = decrypt(binascii.unhexlify(encrypted_block), key, binascii.unhexlify(b'0' * 32))
     result = b''
