@@ -1,6 +1,6 @@
 # Challenge Description
 <p align="center">
-  <img src="challenge.png">
+  <img src="Challenge.png">
 </p>
 <br>
 
