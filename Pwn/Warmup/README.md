@@ -1,7 +1,7 @@
 # Warmup
 
 ## Challenge Description
-![Challenge Description](https://github.com/TMUCTF/TMUCTF-2021/blob/main/Pwn/Warmup/challenge.png)
+![Challenge Description](https://github.com/TMUCTF/TMUCTF-2021/blob/main/Pwn/Warmup/challenge.png | width=100)
 
 ## Writeup
 This challenge was a simple overflow. You just had to give 77 or more chars as input in order to overwrite the variable inside the code and get the flag!  
