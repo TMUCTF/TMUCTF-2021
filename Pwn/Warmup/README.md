@@ -1,5 +1,5 @@
 
-![Challenge Description](https://myoctocat.com/assets/images/base-octocat.svg)
+![Challenge Description](https://github.com/TMUCTF/TMUCTF-2021/blob/main/Pwn/Warmup/challenge.png)
 
 This challenge was a simple overflow. You just had to give 77 or more chars as input in order to overwrite the variable inside the code and get the flag!  
 ```bash
