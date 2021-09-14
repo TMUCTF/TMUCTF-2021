@@ -1,6 +1,6 @@
 # Challenge Description
 <p align="center">
-  <img src="https://github.com/TMUCTF/TMUCTF-2021/blob/main/Pwn/Warmup/challenge.png">
+  <img src="challenge.png">
 </p>
 <br>
 
