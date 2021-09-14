@@ -15,7 +15,7 @@ In this way, we decode the last block using all possible values of the key, and 
 It should be noted that the last 5 bytes of the clear text message are equal to "\n\n\n\n\n" (to understand this, refer to the `pad` function).
 
 After obtaining the key, we decrypt the last block using the obtained key. To do this, we set the IV to zero. Therefore, we obtain the encrypted value of the block before the last (which is also the IV used to encrypt the last block) by XORing the decrypted result with the last block of the clear text message.
-By repeating this for the previous blocks, we finally get the flag, which is the IV of the first block. The solution code for this challenge is available in `solve.py`.
+By repeating this for the previous blocks, we finally get the flag, which is the IV of the first block. The solution code for this challenge is available in [solve.py](https://github.com/TMUCTF/TMUCTF-2021/blob/main/Crypto/435!/Writeup%20Files/solve.py).
 
 The flag:
 ```
