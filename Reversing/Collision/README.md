@@ -50,6 +50,9 @@ set output.filename message.txt
 run
 ```  
 We send the found collisions to the program in the form of a message and receive the flag.
+<p align="center">
+  <img src="Writeup Files/1.png">
+</p>
 
 The flag:
 ```
