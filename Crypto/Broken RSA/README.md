@@ -34,7 +34,7 @@ After factorizing, the flag is obtained by computing the private key and decrypt
 ```
 Public key cryptography. RSA was first publicly described in 1977 by Ron Rivest, Adi Shamir and Leonard Adleman of the Massachusetts Institute of Technology. TMUCTF{Ju57_4n07h3r_R54_ch4ll3n63!_C0u1d_y0u_50lv3_17?!?}
 ```
-The solution code for this challenge is as follows (also available in solve.py):
+The solution code for this challenge is as follows (also available in [solve.py](https://github.com/TMUCTF/TMUCTF-2021/blob/main/Crypto/Broken%20RSA/Writeup%20Files/solve.py)):
 ```python
 from Crypto.Util.number import *
 from math import gcd
