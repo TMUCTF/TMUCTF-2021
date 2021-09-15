@@ -49,7 +49,7 @@ set output file
 set output.filename message.txt
 run
 ```  
-We send the found collisions to the program in the form of a message and receive the flag.
+We send the found collisions to the program in the form of a [message](https://github.com/TMUCTF/TMUCTF-2021/blob/main/Reversing/Collision/Writeup%20Files/message.txt) and receive the flag.
 <p align="center">
   <img src="Writeup Files/1.png">
 </p>
