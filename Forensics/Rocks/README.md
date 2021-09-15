@@ -8,9 +8,9 @@
 In this challenge a zip file is given. After extracting the zip file, two images are obtained.
 Using `binwalk –e Sandstone.jpg` command, a new zip file can be accessed, which has a password.
 The file's password can be found using the `exiftools Sandstone.jpg` command ,in the `Copyright Notice` section.
-'''
+```
 4MRXmZyIVNBp
-'''  
+```  
 After extracting the zip file, two files are obtained.
 Open the `4y3` file with the nano editor and see that there are spaces and tabs at the end of its lines.
 Therefore, we guess that some information is hidden in this file using the `stegsnow` tool.
@@ -35,8 +35,7 @@ stegano-red reveal -i Mudstone.png
 ```
 TMUCTF{570n3_15_5m4
 ```  
-### Note:
-If we use the `zsteg` tool on `Mudstones.png` (the following command), we can also get the first part of the flag.
+**Note:** If we use the `zsteg` tool on `Mudstones.png` (the following command), we can also get the first part of the flag.
 ```
 zsteg --all Mudstones.png | grep -i tmuctf
 ```
