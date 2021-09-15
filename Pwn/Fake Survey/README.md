@@ -30,7 +30,7 @@ for k in l:
 		pass
 print("".join(pl))
 ```   
-And for `return to dl_resove` I used `Ret2dlresolvePayload` class of `pwntools` (also available in [solve_step2.py](https://github.com/TMUCTF/TMUCTF-2021/blob/main/Pwn/Fake%20Survey/Writeup%20Files/solve_step2.py)):  
+And for `return to dl_resove` I used `Ret2dlresolvePayload` class of `pwntools`. Here is its script (also available in [solve_step2.py](https://github.com/TMUCTF/TMUCTF-2021/blob/main/Pwn/Fake%20Survey/Writeup%20Files/solve_step2.py)):  
 ```python
 from pwn import *
 context.binary = elf = ELF('./fakesurvey')
