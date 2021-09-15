@@ -5,7 +5,7 @@
 <br>
 
 # Writeup
-In this challenge, we are given a registration page with the [server-side code]((https://github.com/TMUCTF/TMUCTF-2021/blob/main/Web/Fake%20Registration/Challenge%20Files/challenge.zip)).
+In this challenge, we are given a registration page with the [server-side code](https://github.com/TMUCTF/TMUCTF-2021/blob/main/Web/Fake%20Registration/Challenge%20Files/challenge.zip).
 Open `app.py`. We see that the flag is the admin password.
 In addition, the username and password entered by a user is stored in the database with an `insert` query.
 Since this query is not written securely, it is possible to inject SQL commands through it.
