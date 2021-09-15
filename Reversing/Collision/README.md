@@ -5,11 +5,11 @@
 <br>
 
 # Writeup
-In this challenge a 64-bit ELF file is given. Run the file and see that it asks us for a secret to get the flag.  
+In this challenge a 64-bit ELF file is given. Run the file and see that it asks us for a secret to get the flag. 
 Decompile the file using Ghidra or IDA Pro. 
 By analyzing the code, we find that the program receives a string from the input and then stores its words, which are separated by spaces or tabs, in an array.
-It then obtains a hash value for each word using the `convert' function and stores it in a hash table. 
-A closer look at the hash table implementation in the code reveals that it uses linked lists to manage collisions.  
+It then obtains a hash value for each word using the `convert` function and stores it in a hash table. 
+A closer look at the hash table implementation in the code reveals that it uses linked lists to manage collisions. 
 Finally, the `find` function is called with the zero input and if its return value is more than 456, the flag is printed.
 The `find` function is a simple function that, taking an index as input, returns the number of elements stored in that index of the hash table.  
 So it is clear that, in order to get the flag, we need to enter a string of which at least 456 words have a hash value equal to zero.
@@ -38,7 +38,7 @@ Run ACsploit by executing the following command:
 ```
 python3 acsploit.py
 ```
-Then to get 456 collisions for the number zero in the Java language hashing algorithm, just run the following commands in ACsploit environment:
+Then to get 456 collisions for the number zero in the Java language hashing algorithm, just run the following commands in the ACsploit environment:
 ```
 use hashes/collisions/java
 set exploit.n_collisions 456
