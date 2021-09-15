@@ -5,7 +5,7 @@
 <br>
 
 # Writeup
-Use wireshark to view pcap file.
+Use wireshark to view the pcap file.
 ```
 Export objects => Http => Sort by size => Export oasjnrfou32r01230.zip
 ```
