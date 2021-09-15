@@ -60,7 +60,7 @@ for k in range(10):
 	print(secret[5].decode(), "\n")
 
 rm.close()
-'''  
+```  
 A sample output of this code is shown in the following figure.
 <p align="center">
   <img src="Writeup Files/1.png">
