@@ -6,9 +6,9 @@
 
 # Writeup
 In this challenge, the file "numbers.txt" is given, which is containing 1000000 numbers. 
-to get the flag of this challenge, a function must be written that, given a number x, returns the number of distinct pairs (y, z) from the numbers in the file "numbers.txt" whose y != z and (y + z) == x.
+to get the flag of this challenge, a function must be written that, `given a number x, returns the number of distinct pairs (y, z) from the numbers in the file "numbers.txt" whose y != z and (y + z) == x`.
 It should be noted that two pairs (y, z) and (z, y) are considered the same and are counted only once.
-Because the number of numbers in the file "numbers.txt" is large, the straight forward method that compares all pairs of the numbers together can not be used
+Because the number of numbers in the file "numbers.txt" is large, the straight forward method that compares all pairs of the numbers together cannot be used
 (this straight forward method has a high time complexity and requires a lot of time to run).
 To solve the challenge, it is necessary to use an algorithm with less time complexity.
 A sample of such an algorithm that can find the flag in a short time is as follows (Also available in [solve.py](https://github.com/TMUCTF/TMUCTF-2021/blob/main/Misc/Too%20Much/Writeup%20Files/solve.py)):
