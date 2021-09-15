@@ -11,7 +11,7 @@ If the password is also correct, we must enter a secret correctly and get the fl
 A closer look at the program reveals that the key entered by the user is compared to the main key in the `verify` function. 
 Carefully in the `verify` function we see that the user key and the main key characters are compared one by one in a loop and as soon as the first incorrect character is reached, an error message is printed. 
 Due to the fact that there is a one-second `sleep` call in each round of the loop, it is possible to determine whether the entered key characters are correct or incorrect by calculating the time that the error message is printed. 
-This type of timing attacks is called `side channel` attacks. 
+This type of timing attacks is called `Side-Channel` attacks. 
 The solution code for this part of the challenge is as follows (also available in [solve_part1.py](https://github.com/TMUCTF/TMUCTF-2021/blob/main/Reversing/2FA/Writeup%20Files/solve_part1.py)):
 ```python
 import pwn
