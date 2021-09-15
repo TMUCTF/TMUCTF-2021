@@ -17,7 +17,7 @@ Flag is in /etc/ff3efa4307078c85678c6adee3b5f1b1af2ba16e/nanoflag/
   <img src="Writeup Files/1.png">
 </p>
 
-Given the hint and the name of the challenge, we try to see if there is backups of website pages on the server.
+Given the hint and the name of the challenge, we try to see if there are backups of website pages on the server.
 This attempt is successful and we find the `index.html~` page which is a backup of the `index.html` page.
 In the source code of the `index.html~` page, we find the following help, which is the starting point for solving this challenge:
 ```
@@ -45,8 +45,7 @@ The only limitation is that the total size of the path and the file name should 
 So we cannot open the flag file this way.  
 Since the `/etc/tmuctf/another_flag_help.txt` file has been opened, we try to see its contents from the `/dev/fd/` path and by trying different identifiers.
 Fortunately, we succeed and by entering `/dev/fd/10` in the `flag_help` variable, we can see the contents of the `/etc/tmuctf/another_flag_help.txt` file.
-This file contains another help for us and guides us to the following page:
-/ffc14c6eb03e852ea2d2cbe18b3f4d76.php
+This file contains another help for us and guides us to the `/ffc14c6eb03e852ea2d2cbe18b3f4d76.php` page.
 <p align="center">
   <img src="Writeup Files/3.png">
 </p>
