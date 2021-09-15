@@ -10,19 +10,19 @@ Submitting magic inputs changes the given numbers. Reverse engineer the program 
 After unzipping the apk file, it yields many native libraries named `*-Xamarin*` or `libmono*`.
 From this, we guess that the app has been developed using `Xamarin.Android`.
 Therefore, the compiled .NET code must be present somewhere within the app.
-We find the `magicgame.dll` and throwing this file into dnSpy, but dnSpy refused to open it, while the files were in good shape and not encrypted.
-After some Googling, we notice that the dll file is actually compressed with a custom format, which explains why dnSpy refused to open if.
-The Xamarin developers had recently introduced LZ4 compression to make their APKs smaller, and the magic game application has already built with this feature.
+We find the `magicgame.dll` and throw this file into dnSpy, but dnSpy refused to open it, while the files were in good shape and not encrypted.
+After some Googling, we notice that the dll file is actually compressed with a custom format, which explains why dnSpy refused to open it.
+The Xamarin developers had recently introduced `LZ4` compression to make their APKs smaller, and the `MagicGame` application has already built with this feature.
 We can decompress the dll file using the the script provided in the following link:  
 [https://github.com/x41sec/tools/blob/master/Mobile/Xamarin/Xamarin_XALZ_decompress.py](https://github.com/x41sec/tools/blob/master/Mobile/Xamarin/Xamarin_XALZ_decompress.py)  
 Once the original dll file has been decompressed, it can be decompiled with the dnSpy.
 The source has been recovered. At this point, it should be straightforward to figure out what's going on.  
-The magic input is checked to be alphanumeric and then passed to the `Conv` function and it return `lp` and `op`.  
+The magic input is checked to be alphanumeric and then passed to the `Conv` function.  
 <p align="center">
   <img src="Writeup Files/1.png">
 </p>   
 
-In the `Conv` function, lp is the ASCII code of the first character of input, and op is the result of the `R` function on the result of the `conv2` function on the result of the `Encode` function.  
+In the `Conv` function, `lp` is the ASCII code of the first character of input, and `op` is the result of the `R` function on the result of the `conv2` function on the result of the `Encode` function.  
 <p align="center">
   <img src="Writeup Files/2.png">
 </p>
@@ -35,7 +35,7 @@ The initial number of rotations is the ASCII value of the last letter of the str
 </p>
 
 After converting the magic input, it passed to the `chk` function and the value of the `op` variable compares with the numbers in the `Switch/Case` structure and the desired operation is performed `lp` times.
-We write a script to reverse these functions and get the correct magic inputs.
+We write a script to reverse these functions and get the correct magic inputs. This script is as follows (also available in [decode.py](https://github.com/TMUCTF/TMUCTF-2021/blob/main/Reversing/Magic%20Game/Writeup%20Files/decode.py)):
 ```python
 import binascii
 
@@ -71,7 +71,8 @@ def rev(num):
 ops= [4932739181, 6122352081, 3611099681, 5122107891, 3550866391, 3983866391, 8920866391, 6610774871]
 for op in ops:
     find_decoding(op)
-```   
+```  
+The output of this script is as follows:
 ```
 magic input equal with 4932739181 is:  upth
 magic input equal with 6122352081 is:  upfi
@@ -82,8 +83,9 @@ magic input equal with 3983866391 is:  dwsi
 magic input equal with 8920866391 is:  dwei
 magic input equal with 6610774871 is:  swch
 ```  
-After finding the magic inputs, we must convert the distance between the numbers to a multiple of 8 and use magic inputs to reduce the distance to zero.
-This can be done in several ways, but we did this using "upth" operation and wrote a script that gives us the correct sequence of inputs.
+After finding the magic inputs, we must use them to reduce the distance between the two numbers to zero. 
+This can be done in several ways, but we do it in this way: We first convert the distance between the two numbers to a multiple of 8 and then reduce the distance to zero.
+we wrote a script that gives us the correct sequence of magic inputs. This script is as follows (also available in [solve.py](https://github.com/TMUCTF/TMUCTF-2021/blob/main/Reversing/Magic%20Game/Writeup%20Files/solve.py))
 ```python
 def eight(dis):
     a = int(dis / 8)
