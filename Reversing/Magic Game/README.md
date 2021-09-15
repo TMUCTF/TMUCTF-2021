@@ -20,17 +20,20 @@ The source has been recovered. At this point, it should be straightforward to fi
 The magic input is checked to be alphanumeric and then passed to the `Conv` function and it return `lp` and `op`.  
 <p align="center">
   <img src="Writeup Files/1.png">
-</p>
+</p>   
+
 In the `Conv` function, lp is the ASCII code of the first character of input, and op is the result of the `R` function on the result of the `conv2` function on the result of the `Encode` function.  
 <p align="center">
   <img src="Writeup Files/2.png">
-</p>  
+</p>
+
 The `R` function reverses the number and the `conv2` function converts string to hex.
 The `Encode` function looks like a `Caesar Cipher` where the ASCII value of the letter determines the number of shifts of the alphabet.
 The initial number of rotations is the ASCII value of the last letter of the string plus 5.
 <p align="center">
   <img src="Writeup Files/3.png">
 </p>
+
 After converting the magic input, it passed to the `chk` function and the value of the `op` variable compares with the numbers in the `Switch/Case` structure and the desired operation is performed `lp` times.
 We write a script to reverse these functions and get the correct magic inputs.
 ```python
@@ -68,7 +71,7 @@ def rev(num):
 ops= [4932739181, 6122352081, 3611099681, 5122107891, 3550866391, 3983866391, 8920866391, 6610774871]
 for op in ops:
     find_decoding(op)
-```
+```   
 ```
 magic input equal with 4932739181 is:  upth
 magic input equal with 6122352081 is:  upfi
