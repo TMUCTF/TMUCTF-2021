@@ -5,8 +5,8 @@
 <br>
 
 # Writeup
-In this challenge a 64-bit ELF file is given. Run the file and see that it first asks us for a key. Decompile the file with Ghidra or IDA Pro.  
-By analyzing the code, we find that this is a two-factor authentication program that first takes the key and then, if the key is correct, takes the password from the user. 
+In this challenge a 64-bit ELF file is given. Run the file and see that it first asks us for a key. Decompile the file with Ghidra or IDA Pro. 
+By analyzing the code, we find out that this is a two-factor authentication program that first takes the key and then, if the key is correct, takes the password from the user. 
 If the password is also correct, we must enter a secret correctly and get the flag.  
 A closer look at the program reveals that the key entered by the user is compared to the main key in the `verify` function. 
 Carefully in the `verify` function we see that the user key and the main key characters are compared one by one in a loop and as soon as the first incorrect character is reached, an error message is printed. 
