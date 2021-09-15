@@ -21,8 +21,7 @@ By entering this payload in the username field, the following message will be di
 </p>
 
 As shown in this figure, the `UNIQUE constraint failed: users.username` error is shown.
-So the character 'T' is the correct value of the first character of the admin password.
-
+So the character 'T' is the correct value of the first character of the admin password. 
 If we run the above payload with any other character, the `NOT NULL constraint failed: users.password` error is displayed, which indicates that the character is incorrect (the character leads to an empty value for the password field).
 Therefore, this payload can be run for different characters and finally, the admin password, which is the flag, is obtained.
 The complete script for solving the challenge is as follows (also available in [solve.py](https://github.com/TMUCTF/TMUCTF-2021/blob/main/Web/Fake%20Registration/Writeup%20Files/solve.py)).
