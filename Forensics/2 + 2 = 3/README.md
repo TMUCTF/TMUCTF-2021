@@ -41,7 +41,7 @@ vol.py -f memory.raw --profile=Win7SP1x64 dumpfiles -Q 0x000000007d681aa0 -n -D 
   <img src="Writeup Files/4.png">
 </p>
 
-Open the pdf file. It is a presentation about the mathematic. Go to the end of file. There is a tiny url, Open it and download the image.  
+Open the pdf file. It is a presentation about the mathematic. Go to the end of file. There is a tiny url. Open it and download the image.  
 <p align="center">
   <img src="Writeup Files/5.png">
 </p>
@@ -51,7 +51,7 @@ The header of the png file is damaged. Correct it with a hex editor (Change the 
   <img src="Writeup Files/6.png">
 </p>
 
-Search important directories for the first part of the flag.
+Search important directories for the second part of the flag.
 ```
 vol.py -f memory.raw --profile=Win7SP1x64 filescan | grep -i downloads
 ```  
