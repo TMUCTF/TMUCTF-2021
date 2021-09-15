@@ -64,7 +64,7 @@ print(conn.recvuntil(b':').decode(), end='')
 print(conn.recvline().decode())
 print(conn.recvline().decode())
 ```  
-The flag is:
+The flag:
 ```
 TMUCTF{W0w_Y0u_Cr4ck3d_7h3_H0u53_L1k3_4_Ch4mp}
 ```
