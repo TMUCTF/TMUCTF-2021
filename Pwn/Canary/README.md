@@ -5,7 +5,7 @@
 <br>
 
 # Writeup
-This is a shellcode challenge. We have to insert a two-part shellcode and finally overwrite the address of the beginning of the shellcode. Here is the script:    
+This is a shellcode challenge. We have to insert a two-part shellcode and finally overwrite the address of the beginning of the shellcode. Here is the script (also available in [solve.py](https://github.com/TMUCTF/TMUCTF-2021/blob/main/Pwn/Canary/Writeup%20Files/solve.py)):    
 ```python
 from pwn import *
 context.arch = "amd64"
