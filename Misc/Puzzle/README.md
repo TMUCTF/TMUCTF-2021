@@ -11,7 +11,7 @@ Use Binwalk for this purpose and see that a zip file is hidden inside the image.
 Extract the zip file. Inside the zip file there is an image of a puzzle and another zip file with a password.
 To get the password we have to solve the puzzle.
 <p align="center">
-  <img src="Writeup Files/puzzle.png">
+  <img src="Writeup Files/puzzle.png" width="500" height="500">
 </p>
 
 Carefully in the puzzle we find that each of its lines (except the first one) describes the previous line, 
