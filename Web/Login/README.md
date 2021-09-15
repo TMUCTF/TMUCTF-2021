@@ -17,9 +17,9 @@ We check this file and see that it contains a snippet of PHP code.
 </p>
 
 This code indicates that if the password matches its MD5 hash, the login will be successful and the flag will be displayed. 
-Since the comparison type used in this code is loose comparison, we can search for the magic hashes to bypass it. 
-If you are not familiar with the differences between the loose and strict comparisons in PHP, be sure to read about it. 
-The following link is a good source for MD5 magic hashes:
+Since the comparison type used in this code is the loose comparison, we can search for the magic hashes to bypass it. 
+If you are not familiar with the differences between the loose and strict comparisons in PHP, be sure to read about it.  
+The following link is a good source for MD5 magic hashes:  
 [https://github.com/spaze/hashes/blob/master/md5.md](https://github.com/spaze/hashes/blob/master/md5.md)
 
 Finally we enter "0e215962017" as the password and login successfully.
