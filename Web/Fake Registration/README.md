@@ -6,7 +6,7 @@
 
 # Writeup
 In this challenge, we are given a registration page with the [server-side code](https://github.com/TMUCTF/TMUCTF-2021/blob/main/Web/Fake%20Registration/Challenge%20Files/challenge.zip).
-Open `app.py`. We see that the flag is the admin password.
+Open the `app.py` file. We see that the flag is the admin password.
 In addition, the username and password entered by a user is stored in the database with an `insert` query.
 Since this query is not written securely, it is possible to inject SQL commands through it.
 As can be seen in the code, the length of each of the username and password fields is limited to 67.
@@ -21,7 +21,7 @@ By entering this payload in the username field, the following message will be di
 </p>
 
 As shown in this figure, the `UNIQUE constraint failed: users.username` error is shown.
-So the character "T" is the correct value of the first character of the admin password.
+So the character 'T' is the correct value of the first character of the admin password.
 
 If we run the above payload with any other character, the `NOT NULL constraint failed: users.password` error is displayed, which indicates that the character is incorrect (the character leads to an empty value for the password field).
 Therefore, this payload can be run for different characters and finally, the admin password, which is the flag, is obtained.
