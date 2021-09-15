@@ -6,7 +6,7 @@
 
 # Writeup
 This challenge has two steps. In the first step we have to use `format string` vulnerability to leak the needed passPhrase. In second step we can use `return ro dl_reslove` technique.   
-Here is the script used for the first step:    
+Here is the script used for the first step (also available in [solve_step1.py](https://github.com/TMUCTF/TMUCTF-2021/blob/main/Pwn/Fake%20Survey/Writeup%20Files/solve_step1.py)):    
 ```python
 import pwn
 import time
@@ -30,7 +30,7 @@ for k in l:
 		pass
 print("".join(pl))
 ```   
-And for `return to dl_resove` I used `Ret2dlresolvePayload` class of `pwntools`:  
+And for `return to dl_resove` I used `Ret2dlresolvePayload` class of `pwntools` (also available in [solve_step2.py](https://github.com/TMUCTF/TMUCTF-2021/blob/main/Pwn/Fake%20Survey/Writeup%20Files/solve_step2.py)):  
 ```python
 from pwn import *
 context.binary = elf = ELF('./fakesurvey')
