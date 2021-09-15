@@ -14,7 +14,8 @@ I used `die.exe`:
 <p align="center">
   <img src="Writeup Files/1.png">
 </p>  
-One of the tools that can be used for unpacking themida-packed .NET files, is `ExtremeDumper`.
+
+`ExtremeDumper` is one of the tools that can be used for unpacking themida-packed .NET files.
 It gets a dump from the unpacked file loaded to memory and stores it.
 In order to get a dump from a unpacked exe file, first run the exe file and while it is running, run ExtremeDumper.
 It lists all executables running in the system. Right-click on it and select dump. This is how you can get the unpacked exe file.   
@@ -22,7 +23,7 @@ Finally use dnsPy to decompile the program. There is an `if` condition which alw
 Now we need just a simple 'if' condition patching. Run the patched file and you can see the flag!  
 This is the patched `if`:     
 ```c
-if (Program.InitializeKeys() < 0){
+if (Program.InitializeKeys() < 0) {
 	Console.WriteLine("Wrong!");
 	return;
 }
