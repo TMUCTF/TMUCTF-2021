@@ -80,7 +80,11 @@ The password is:
 ```
 50_57R0nG_P455w02d_83467
 ```  
-In the third part of the challenge, we must enter a secret message to get the flag. To see how this part is solved, refer to the [Collision](https://github.com/TMUCTF/TMUCTF-2021/blob/main/Reversing/Collision) challenge.
+In the third part of the challenge, we must enter a secret message to get the flag. To see how this part is solved, refer to the [Collision](https://github.com/TMUCTF/TMUCTF-2021/blob/main/Reversing/Collision) challenge.  
+Finally, by entering the correct values of the key, password and secret message, the flag can be received.  
+<p align="center">
+  <img src="Writeup Files/1.png">
+</p>  
 
 The flag:
 ```
