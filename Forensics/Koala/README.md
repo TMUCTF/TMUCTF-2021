@@ -21,13 +21,9 @@ There is an article in this link and a part of the flag is hidden in it.
   <img src="Writeup Files/1.png">
 </p>
 
-Also there is a Koala image in the disk image with the name "hi.jpg".
+Also there is a Koala image in the disk image with the name [hi.jpg](https://github.com/TMUCTF/TMUCTF-2021/blob/main/Forensics/Koala/Writeup%20Files/Hi.jpg).
 <p align="center">
   <img src="Writeup Files/2.jpg">
-</p>
-
-<p align="center">
-  <img src="Writeup Files/Hi.jpg">
 </p>
 
 Furthermore, there is a text file, namely, "Don't touch me.txt", in the Documents folder, which contains an interesting sentence
