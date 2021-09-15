@@ -10,7 +10,7 @@ Submitting magic inputs changes the given numbers. Reverse engineer the program 
 After unzipping the apk file, it yields many native libraries named `*-Xamarin*` or `libmono*`.
 From this, we guess that the app has been developed using `Xamarin.Android`.
 Therefore, the compiled .NET code must be present somewhere within the app.
-We find the magicgame.dll, throwing this file into dnSpy, refused to open it, while the files were in good shape and not encrypted.
+We find the `magicgame.dll` and throwing this file into dnSpy, but dnSpy refused to open it, while the files were in good shape and not encrypted.
 After some Googling, we notice that the dll file is actually compressed with a custom format, which explains why dnSpy refused to open if.
 The Xamarin developers had recently introduced LZ4 compression to make their APKs smaller, and the magic game application has already built with this feature.
 We can decompress the dll file using the the script provided in the following link:  
