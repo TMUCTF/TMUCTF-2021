@@ -25,14 +25,14 @@ flag = claripy.Concat(*flag_chars + [claripy.BVV("\n", 8)])
 state = proj.factory.full_init_state(stdin = flag)
 
 for i in flag_chars:
-	state.solver.add(i >= '!')
-	state.solver.add(i <= '~')
+    state.solver.add(i >= '!')
+    state.solver.add(i <= '~')
 
 sim = proj.factory.simulation_manager(state)
 sim.explore(find = success, avoid = fail)
 
 for i in range(len(sim.found)):
-	print(sim.found[i].posix.dumps(0))
+    print(sim.found[i].posix.dumps(0))
 ```  
 The flag:
 ```
