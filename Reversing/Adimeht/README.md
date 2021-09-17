@@ -24,8 +24,8 @@ Now we need just a simple 'if' condition patching. Run the patched file and you 
 This is the patched `if`:     
 ```c
 if (Program.InitializeKeys() < 0) {
-	Console.WriteLine("Wrong!");
-	return;
+    Console.WriteLine("Wrong!");
+    return;
 }
 Program.PrintFlag();
 ```   
